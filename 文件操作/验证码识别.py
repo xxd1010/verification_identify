@@ -133,13 +133,8 @@ def save_data_set(data_set, file_path):
 
 
 # 神经网络训练
-def train_main():
-    t1 = time.time()
-    print("loading file...")
-    data_set = load_file(LETTER_FILE_PATH)
-    t2 = time.time()
-    print("loading completed")
-    print(t2 - t1)
+def train_main(datum_set):
+    datum_set = datum_set
 
 
 if __name__ == "__main__":
@@ -153,4 +148,10 @@ if __name__ == "__main__":
         os.mkdir(LETTER_FILE_PATH)
 
     # batch(500, 'letter')
-    train_main()
+    t1 = time.time()
+    print("loading file...")
+    datum_set = load_file(LETTER_FILE_PATH)
+    t2 = time.time()
+    print("loading completed")
+    print(t2 - t1)
+    train_main(datum_set)
